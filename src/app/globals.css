@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/*
+  Figma: Season VF-TRIAL / Mix SemiBold. Licensed trial file:
+    public/fonts/SeasonCollectionVF-TRIAL.woff2
+*/
+@font-face {
+  font-family: "Season VF";
+  src: url("/fonts/SeasonCollectionVF-TRIAL.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Season Sans — sidebar nav (named instances from SeasonCollectionVF-TRIAL.woff2). */
+.font-season-sans-450 {
+  font-family: var(--font-sans);
+  font-weight: 450;
+  font-variation-settings: "wght" 450, "SERF" 0, "slnt" 0;
+}
+
+.font-season-sans-500 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-variation-settings: "wght" 500, "SERF" 0, "slnt" 0;
+}
+
+.font-season-sans-medium {
+  font-family: var(--font-sans);
+  font-weight: 550;
+  font-variation-settings: "wght" 550, "SERF" 0, "slnt" 0;
+}
+
+.font-season-sans-semibold {
+  font-family: var(--font-sans);
+  font-weight: 650;
+  font-variation-settings: "wght" 650, "SERF" 0, "slnt" 0;
+}
+
+/* Season Mix — hero (SERF 50). Default VF instance is Sans (SERF 0). */
+.font-season-mix {
+  font-family: var(--font-sans);
+  font-weight: 670;
+  font-variation-settings: "wght" 670, "SERF" 50, "slnt" 0;
+}
+
+/* Alias — Mix is SERF 50, not a separate “serif” step (that would be SERF 100). */
+.font-season-mix-serif {
+  font-family: var(--font-sans);
+  font-weight: 670;
+  font-variation-settings: "wght" 670, "SERF" 50, "slnt" 0;
+}
+
+/* Home hero + section titles — DM Serif Display. next/font sets --font-hero-dm-serif on <body>. */
+.font-hero-dm-serif {
+  font-family: var(--font-hero-dm-serif), "DM Serif Display", Georgia, "Times New Roman", serif;
+}
+
+:root {
+  --color-bg: #f5f5f3;
+  /* Hero / body secondary — Figma fill on description text */
+  --color-muted: rgb(120, 126, 139);
+  /* Nav inactive, Connect, footer handle, meta — Figma ~rgb(162,170,186) */
+  --color-nav-muted: rgb(162, 170, 186);
+  --color-subtle: rgb(162, 170, 186);
+  --color-ink: #000000;
+  /* Divider line — Figma `Vector 3` stroke under `Divider` frames */
+  --color-divider-line: rgb(222, 226, 234);
+}
+
+@theme inline {
+  /* Season for UI + Mix headings (weights differentiate); Geist fallback */
+  --font-sans:
+    "Season VF", "Season VF-TRIAL", var(--font-geist-sans), ui-sans-serif, system-ui,
+    sans-serif;
+  /* Buttons + weather — Figma: SF Pro Display Medium (system stack on web) */
+  --font-cta: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI",
+    Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
