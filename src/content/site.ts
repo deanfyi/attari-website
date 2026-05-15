@@ -26,26 +26,39 @@ export const socialLinks: {
   { label: "Email", href: "mailto:hello@attari.studio", network: "email" },
 ];
 
-export const projects = [
+export type ProjectTagIcon = "devices" | "write" | "apple" | "test-tube";
+
+export type Project = {
+  title: string;
+  tag: string;
+  tagIcon: ProjectTagIcon;
+  preview: "blackrabbit" | "inboxed" | "undercut" | "ocular";
+};
+
+export const projects: Project[] = [
   {
     title: "Blackrabbit",
     tag: "Website",
-    imageClass: "bg-zinc-900",
+    tagIcon: "devices",
+    preview: "blackrabbit",
   },
   {
     title: "Inboxed",
     tag: "Branding",
-    imageClass: "bg-gradient-to-br from-amber-200 to-orange-400",
+    tagIcon: "write",
+    preview: "inboxed",
   },
   {
     title: "Undercut",
     tag: "iOS Dev",
-    imageClass: "bg-gradient-to-br from-emerald-600 to-teal-900",
+    tagIcon: "apple",
+    preview: "undercut",
   },
   {
     title: "Ocular",
     tag: "Concept",
-    imageClass: "bg-gradient-to-br from-violet-500 to-indigo-900",
+    tagIcon: "test-tube",
+    preview: "ocular",
   },
 ];
 
@@ -55,33 +68,38 @@ export type AppCard = {
   cta: string;
   href?: string;
   status?: "live" | "soon";
+  icon: "undercut" | "heymac" | "opentide" | "clippity";
 };
 
 export const appCards: AppCard[] = [
   {
     name: "Undercut",
     description: "Fantasy Formula One",
-    cta: "Try Undercut",
+    cta: "Download",
     href: "#",
     status: "live",
+    icon: "undercut",
   },
   {
     name: "HeyMac",
     description: "Your personal MacOS assistant",
     cta: "Coming soon",
     status: "soon",
+    icon: "heymac",
   },
   {
     name: "Opentide",
     description: "Making tax simple",
     cta: "Coming soon",
     status: "soon",
+    icon: "opentide",
   },
   {
     name: "Clippity",
     description: "Create clips from any web video",
     cta: "Coming soon",
     status: "soon",
+    icon: "clippity",
   },
 ];
 
